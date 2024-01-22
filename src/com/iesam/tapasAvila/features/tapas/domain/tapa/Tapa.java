@@ -1,6 +1,8 @@
 package com.iesam.tapasAvila.features.tapas.domain.tapa;
 
-public class Tapa {
+import java.util.ArrayList;
+
+public class Tapa extends ArrayList<Tapa> {
 
     private String name;
     private String address;

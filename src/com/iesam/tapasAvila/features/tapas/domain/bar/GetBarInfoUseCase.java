@@ -1,5 +1,7 @@
 package com.iesam.tapasAvila.features.tapas.domain.bar;
 
+import java.util.ArrayList;
+
 public class GetBarInfoUseCase {
 
 
@@ -12,11 +14,10 @@ public class GetBarInfoUseCase {
 
     }
 
-    public BarInfo execute(String petId){
+    public ArrayList<BarInfo> execute(String idBar) {
 
 
         return this.barInfoRepository.obtainBarInfo(idBar);
-
     }
 
 

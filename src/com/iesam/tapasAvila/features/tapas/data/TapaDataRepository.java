@@ -13,6 +13,46 @@ public class TapaDataRepository implements TapaRepository {
     }
 
 
+    public ArrayList<Tapa> obtipeTapa(String petId) {
+        return localTapas;
+    }
+
+
+    public ArrayList<Tapa> deleteTapa() {
+        return null;
+    }
+
+    @Override
+    public void deleteTapa(Tapa tapa) {
+
+    }
+
+
+    public Tapa obtainTapa(String id) {
+        for (Tapa tapa : localTapas) {
+            if (tapa.getId().equals(id)) {
+                return tapa;
+            }
+        }
+        return null;
+    }
+
+
+    public void deleteTapa(String id) {
+
+    }
+
+
+    public void saveTapa(Tapa tapa) {
+
+    }
+
+
+    public void updateTapa(Tapa tapa) {
+
+    }
+
+
 
 
 
