@@ -15,14 +15,11 @@ public class TapaDataRepository implements TapaRepository {
         initData();
     }
 
-    public ArrayList<Tapa> obtainTapas() {
-        return localTapas;
-    }
 
 
     @Override
     public ArrayList<Tapa> obtainTapa() {
-        return null;
+        return localTapas;
     }
 
     public Tapa obtainTapa(String id) {
