@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        int choice;
+        int numero;
+        String id;
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Menú de Gestión de Tapas");
@@ -17,22 +18,22 @@ public class Main {
             System.out.println("4. Salir");
             System.out.print("Seleccione una opción: ");
 
-            choice = scanner.nextInt();
+            numero = scanner.nextInt();
 
 
-            switch (choice) {
+            switch (numero) {
                 case 1:
                     MainTapa.printTapas();
                     break;
                 case 2:
                     System.out.print("Ingrese el ID de la tapa: ");
-                    String tapaId = scanner.nextLine();
-                    MainTapa.printTapa(tapaId);
+                     id = scanner.nextLine();
+                    MainTapa.printTapa(id);
                     break;
                 case 3:
                     System.out.print("Ingrese el ID de la tapa a eliminar: ");
-                    String deleteTapaId = scanner.nextLine();
-                    MainTapa.deleteTapa(deleteTapaId);
+                    id = scanner.nextLine();
+                    MainTapa.deleteTapa(id);
                     break;
                 case 4:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
@@ -41,7 +42,7 @@ public class Main {
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
 
-        } while (choice != 4);
+        } while (numero != 4);
 
         scanner.close();
     }

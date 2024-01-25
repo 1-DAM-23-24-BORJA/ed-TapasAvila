@@ -12,21 +12,17 @@ public class TapaDataRepository implements TapaRepository {
         initData();
     }
 
-
-    public ArrayList<Tapa> obtipeTapa(String petId) {
+    public ArrayList<Tapa> obtipeTapa() {
         return localTapas;
     }
-
-
-    public ArrayList<Tapa> deleteTapa() {
+    public ArrayList<Tapa> deleteTapas() {
         return null;
     }
 
     @Override
-    public void deleteTapa(Tapa tapa) {
-
+    public ArrayList<Tapa> obtipeTapa(String petId) {
+        return null;
     }
-
 
     public Tapa obtainTapa(String id) {
         for (Tapa tapa : localTapas) {
@@ -37,7 +33,18 @@ public class TapaDataRepository implements TapaRepository {
         return null;
     }
 
+    @Override
+    public ArrayList<Tapa> deleteTapa() {
 
+        return null;
+    }
+
+    @Override
+    public void deleteTapa(Tapa tapa) {
+
+    }
+
+    @Override
     public void deleteTapa(String id) {
 
     }
@@ -51,15 +58,6 @@ public class TapaDataRepository implements TapaRepository {
     public void updateTapa(Tapa tapa) {
 
     }
-
-
-
-
-
-
-
-
-
 
     private void initData() {
         localTapas.add(new Tapa("tapa1","ww","","","","","",3,4,""));

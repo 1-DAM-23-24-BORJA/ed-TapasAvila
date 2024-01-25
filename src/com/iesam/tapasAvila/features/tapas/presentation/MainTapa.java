@@ -11,14 +11,13 @@ public class MainTapa {
 
     public static void printTapas(){
         GetTapasUseCase tapasUseCase = new GetTapasUseCase(new TapaDataRepository());
-        ArrayList<Tapa> tapa = tapasUseCase.execute();
-        //imprimir cada una de las mascotas
-        System.out.println(tapa.toString());
+        ArrayList<Tapa> tapas = tapasUseCase.execute();
+        System.out.println(tapas.toString());
     }
 
     public static void printTapa(String id){
         GetTapaUseCase getTapaUseCase= new GetTapaUseCase(new TapaDataRepository());
-        var tapa = (Tapa) getTapaUseCase.execute(id);
+        Tapa tapa = getTapaUseCase.execute(id);
         System.out.println(tapa.toString());
     }
     public static void deleteTapa(String id){
@@ -28,7 +27,7 @@ public class MainTapa {
         ArrayList<Tapa> tapasBeforeDelete = getTapasUseCase.execute();
 
         DeleteTapaUseCase deleteTapaUseCase = new DeleteTapaUseCase(tapaDataRepository);
-        deleteTapaUseCase.execute(id);
+        deleteTapaUseCase.execute();
 
         //Después de eliminar
         ArrayList<Tapa> tapasAfterDelete = getTapasUseCase.execute();
@@ -38,7 +37,7 @@ public class MainTapa {
     public static void deleteTapaNotWorking(String id){
         printTapas();
         DeleteTapaUseCase deleteTapaUseCase = new DeleteTapaUseCase(TapaDataRepository);
-       deleteTapaUseCase.execute(id);
+       deleteTapaUseCase.execute();
        printTapas();
     }
 

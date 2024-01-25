@@ -8,10 +8,15 @@ public class SaveTapaUseCase {
 
     private TapaRepository tapaRepository;
 
-    public SaveTapaUseCase(SaveTapaUseCase saveTapaUseCase){
-        this.tapaRepository = saveTapaUseCase.tapaRepository;
+    public SaveTapaUseCase(TapaRepository tapaRepository){
+
+        this.tapaRepository= tapaRepository;
+
     }
 
+   public  void execute(Tapa tapa){
+        this.tapaRepository.saveTapa(tapa);
+   }
 
 
 }

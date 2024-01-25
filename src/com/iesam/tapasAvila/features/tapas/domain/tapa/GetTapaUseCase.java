@@ -10,18 +10,18 @@ public class GetTapaUseCase {
     private TapaDataRepository tapaDataRepository;
     private String id;
 
-    public GetTapaUseCase(TapaRepository tapaRepository){
 
-        this.tapaDataRepository= (TapaDataRepository) tapaRepository;
-
+    public GetTapaUseCase(TapaDataRepository tapaDataRepository) {
+        this.tapaDataRepository = tapaDataRepository;
     }
 
 
-    public Object execute(String id) {
+    public Tapa execute(String id){
+
         return this.tapaDataRepository.obtainTapa(id);
+
     }
+
 }
-
-
 
 

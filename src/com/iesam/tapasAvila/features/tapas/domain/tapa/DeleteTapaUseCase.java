@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class DeleteTapaUseCase {
 
 
-    private DeleteTapaUseCase DeleteTapaUseCase;
+    private TapaRepository tapaRepository ;
     public DeleteTapaUseCase(TapaRepository tapaRepository){
 
-        this.DeleteTapaUseCase= null;
+        this.tapaRepository= null;
 
     }
 
-    public ArrayList<Tapa> execute(String id){
+    public ArrayList<Tapa> execute(){
 
-        return this.DeleteTapaUseCase.execute(id);
+        return this.tapaRepository.deleteTapa();
 
     }
 
