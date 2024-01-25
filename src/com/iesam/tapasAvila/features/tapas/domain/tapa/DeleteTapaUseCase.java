@@ -1,23 +1,14 @@
 package com.iesam.tapasAvila.features.tapas.domain.tapa;
 
-import java.util.ArrayList;
+import com.iesam.tapasAvila.features.tapas.data.TapaDataRepository;
 
 public class DeleteTapaUseCase {
+    private TapaRepository tapaRepository;
 
-
-    private TapaRepository tapaRepository ;
-    public DeleteTapaUseCase(TapaRepository tapaRepository){
-
-        this.tapaRepository= null;
-
+    public DeleteTapaUseCase(TapaRepository tapaDataRepository) {
+        this.tapaRepository = tapaDataRepository;
     }
 
-    public ArrayList<Tapa> execute(){
-
-        return this.tapaRepository.deleteTapa();
-
-    }
-
-
-
-}
+    public void execute(String id){
+        tapaRepository.deleteTapa(id);
+    }}

@@ -7,20 +7,21 @@ import java.util.ArrayList;
 
 public class TapaDataRepository implements TapaRepository {
 
+    private static TapaDataRepository instance = null;
+
     private ArrayList<Tapa> localTapas = new ArrayList<>();
-    public TapaDataRepository(){
+
+    public TapaDataRepository() {
         initData();
     }
 
-    public ArrayList<Tapa> obtipeTapa() {
+    public ArrayList<Tapa> obtainTapas() {
         return localTapas;
     }
-    public ArrayList<Tapa> deleteTapas() {
-        return null;
-    }
+
 
     @Override
-    public ArrayList<Tapa> obtipeTapa(String petId) {
+    public ArrayList<Tapa> obtainTapa() {
         return null;
     }
 
@@ -33,44 +34,45 @@ public class TapaDataRepository implements TapaRepository {
         return null;
     }
 
-    @Override
-    public ArrayList<Tapa> deleteTapa() {
-
-        return null;
-    }
-
-    @Override
-    public void deleteTapa(Tapa tapa) {
-
-    }
-
-    @Override
     public void deleteTapa(String id) {
-
+        for (int i = 0; i < localTapas.size(); i++) {
+            if (localTapas.get(i).getId().equals(id))
+                localTapas.remove(i);
+        }
     }
 
-
+    @Override
     public void saveTapa(Tapa tapa) {
-
+        localTapas.add(tapa);
     }
 
-
+    @Override
     public void updateTapa(Tapa tapa) {
-
+        deleteTapa(tapa.getId());
+        saveTapa(tapa);
     }
+
 
     private void initData() {
-        localTapas.add(new Tapa("tapa1","ww","","","","","",3,4,""));
-        localTapas.add(new Tapa("tapa1","ww","","","","","",3,4,""));
+        localTapas.add(new Tapa("tapa1", "ww", "3", "3", "3", "3", "3", 3, 4, "3"));
+        localTapas.add(new Tapa("tapa1", "ww", "", "", "", "", "", 3, 4, ""));
     }
 
-
-
-
-
-
-
-
-
-
+    public static TapaRepository newInstance() {
+        if (instance == null) {
+            instance = new TapaDataRepository();
+        }
+        return instance;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

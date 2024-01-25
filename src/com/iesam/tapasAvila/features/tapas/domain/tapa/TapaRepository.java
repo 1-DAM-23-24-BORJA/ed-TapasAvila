@@ -5,30 +5,11 @@ import java.util.ArrayList;
 public interface TapaRepository {
 
 
-    ArrayList<Tapa> obtipeTapa();
 
-    ArrayList<Tapa> obtipeTapa(String petId);
-
-    ArrayList<Tapa> obtainTapa(String id);
-    ArrayList<Tapa> deleteTapa();
-
-    void deleteTapa(Tapa tapa);
-
+    ArrayList<Tapa> obtainTapa();
+    Tapa obtainTapa(String id);
     void deleteTapa(String id);
     void saveTapa(Tapa tapa);
+
     void updateTapa(Tapa tapa);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -28,12 +28,12 @@ public class Main {
                 case 2:
                     System.out.print("Ingrese el ID de la tapa: ");
                      id = scanner.nextLine();
-                    MainTapa.printTapa(id);
+
                     break;
                 case 3:
                     System.out.print("Ingrese el ID de la tapa a eliminar: ");
                     id = scanner.nextLine();
-                    MainTapa.deleteTapa(id);
+
                     break;
                 case 4:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
