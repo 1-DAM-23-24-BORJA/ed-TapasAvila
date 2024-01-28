@@ -24,6 +24,7 @@ public class Main {
             switch (numero) {
                 case 1:
                     MainTapa.printTapas();
+
                     break;
                 case 2:
                     System.out.print("Ingrese el ID de la tapa: ");

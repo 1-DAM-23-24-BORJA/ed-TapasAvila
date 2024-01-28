@@ -11,6 +11,6 @@ public class GetTapasUseCase {
     }
 
     public ArrayList<Tapa> execute() {
-        return  tapaRepository.obtainTapa();
+        return  tapaRepository.obtainTapas();
     }
 }

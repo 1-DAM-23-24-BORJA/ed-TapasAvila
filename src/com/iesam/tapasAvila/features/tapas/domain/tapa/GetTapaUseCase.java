@@ -5,18 +5,18 @@ import com.iesam.tapasAvila.features.tapas.data.TapaDataRepository;
 import java.util.ArrayList;
 
 public class GetTapaUseCase {
-    private TapaDataRepository tapaDataRepository;
+    private TapaRepository tapaRepository;
 
 
 
-    public GetTapaUseCase(TapaDataRepository tapaDataRepository) {
-        this.tapaDataRepository = tapaDataRepository;
+    public GetTapaUseCase(TapaRepository tapaRepository) {
+        this.tapaRepository = tapaRepository;
     }
 
 
-    public ArrayList<Tapa> execute() {
-        return this.tapaDataRepository.obtainTapa();
-    }
+  public  Tapa execute(String id){
+        return  this.tapaRepository.obtainTapa(id);
+  }
 }
 
 
