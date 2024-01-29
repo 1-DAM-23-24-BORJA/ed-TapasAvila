@@ -1,26 +1,26 @@
 package com.iesam.tapasAvila.features.tapas.domain.bar;
 
+import com.iesam.tapasAvila.features.tapas.domain.tapa.Tapa;
+import com.iesam.tapasAvila.features.tapas.domain.tapa.TapaRepository;
+
 import java.util.ArrayList;
 
 public class GetBarInfosUseCase {
 
 
-    private BarInfoRepository barInfoRepository;
-    private String idBar;
+    private BarInfoRepository BarInfoRepository;
 
-    public GetBarInfosUseCase(BarInfoRepository barInfoRepository) {
-        this.barInfoRepository = barInfoRepository;
+
+    public GetBarInfosUseCase(BarInfoRepository BarInfoRepository) {
+        this.BarInfoRepository = BarInfoRepository;
     }
 
-    public ArrayList<BarInfo> execute(){
-
-        return this.barInfoRepository.obtainBarInfo(idBar);
-
+    public ArrayList<BarInfo> execute() {
+        return  BarInfoRepository.obtainBarInfo();
     }
-
-
-
-
-
-
 }
+
+
+
+
+

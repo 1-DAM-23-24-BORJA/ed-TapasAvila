@@ -1,22 +1,20 @@
 package com.iesam.tapasAvila.features.tapas.domain.bar;
 
+import com.iesam.tapasAvila.features.tapas.domain.tapa.TapaRepository;
+
 import java.util.ArrayList;
 
 public class DeleteBarInfoUseCase {
 
-    private BarInfoRepository barInfoRepository;
-    public DeleteBarInfoUseCase(BarInfoRepository barInfoRepository){
+    private BarInfoRepository BarInfoRepository;
 
-        this.barInfoRepository= null;
-
+    public DeleteBarInfoUseCase(TapaRepository tapaRepository) {
+        this.BarInfoRepository = BarInfoRepository;
     }
 
-    public ArrayList<BarInfo> execute(){
-
-        return this.barInfoRepository.deleteBarInfo();
-
+    public void execute(String idBarInfo){
+        BarInfoRepository.deleteBarInfo(idBarInfo);
     }
-
 
 
 

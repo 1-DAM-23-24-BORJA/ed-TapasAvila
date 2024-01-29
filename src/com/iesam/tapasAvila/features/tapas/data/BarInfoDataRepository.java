@@ -1,70 +1,77 @@
 package com.iesam.tapasAvila.features.tapas.data;
 
 import com.iesam.tapasAvila.features.tapas.domain.bar.BarInfo;
-import com.iesam.tapasAvila.features.tapas.domain.tapa.Tapa;
+import com.iesam.tapasAvila.features.tapas.domain.bar.BarInfoRepository;
 
 import java.util.ArrayList;
 
-public class BarInfoDataRepository {
 
 
+
+public class BarInfoDataRepository implements BarInfoRepository {
     private ArrayList<BarInfo> localBarInfo = new ArrayList<>();
-    public BarInfoDataRepository(){
+    private static BarInfoDataRepository instance = null;
+    public BarInfoDataRepository() {
         initData();
     }
 
-
-
-    public ArrayList<BarInfo> obtipeBarInfo(String idBarInfo) {
+    @Override
+    public ArrayList<BarInfo> obtainBarInfos() {
         return localBarInfo;
     }
 
-
-    public ArrayList<BarInfo> deleteBarInfo() {
+    @Override
+    public ArrayList<BarInfo> obtainBarInfo() {
         return null;
     }
 
-
-    public BarInfo obtainBarInfo(String idBarInfo) {
+    public BarInfo obtainBarInfo(String IdBar) {
         for (BarInfo barInfo : localBarInfo) {
-            if (barInfo.getIdBar().equals(idBarInfo)) {
+            if (barInfo.getIdBar().equals(IdBar)) {
                 return barInfo;
             }
         }
         return null;
     }
 
+    public void deleteBarInfo(String IdBar) {
+        for (int i = 0; i < localBarInfo.size(); i++) {
+            if (localBarInfo.get(i).getIdBar().equals(IdBar))
+                localBarInfo.remove(i);
+        }
+    }
 
-    public void deleteBarInfo(String idBarInfo) {
+    @Override
+    public void saveBarInfo(BarInfo BarInfo) {
 
     }
 
-
-    public void saveBarInfo(BarInfo barInfo) {
-
+    @Override
+    public void savelocalBarInfo(BarInfo barInfo) {
+        localBarInfo.add(barInfo);
     }
-
-
+    @Override
     public void updateBarInfo(BarInfo barInfo) {
+        deleteBarInfo(barInfo.getIdBar());
+        saveBarInfo(barInfo);
+
 
     }
-
-
-
-
-
-
-
-
-
 
     private void initData() {
-        localBarInfo.add(new BarInfo("","","", "","",""));
-        localBarInfo.add(new BarInfo("","","", "","",""));
+        localBarInfo.add(new BarInfo("u","","", "","",""));
+        localBarInfo.add(new BarInfo("u","","", "","",""));
+    }
+
+    public static BarInfoDataRepository newInstance(){
+
+        if (instance == null){
+            instance= new BarInfoDataRepository();
+        }
+        return instance;
     }
 
 
+    }
 
 
-
-}
