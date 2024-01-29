@@ -1,7 +1,9 @@
 package com.iesam.tapasAvila;
 
+import com.iesam.tapasAvila.features.tapas.domain.bar.BarInfo;
 import com.iesam.tapasAvila.features.tapas.domain.tapa.Tapa;
 import com.iesam.tapasAvila.features.tapas.presentation.MainTapa;
+import com.iesam.tapasAvila.features.tapas.presentation.MainBar;
 import java.util.*;
 
 public class Main {
@@ -16,7 +18,12 @@ public class Main {
             System.out.println("3. Eliminar una tapa por ID");
             System.out.println("4. Crear una nueva tapa");
             System.out.println("5. Actualizar una tapa existente");
-            System.out.println("6. Salir");
+            System.out.println("6. Mostrar todas las informaciones del bar");
+            System.out.println("7. Mostrar información del bar por ID");
+            System.out.println("8. Eliminar información del bar por ID");
+            System.out.println("9. Crear nueva información del bar");
+            System.out.println("10. Actualizar información del bar existente");
+            System.out.println("11. Salir");
             System.out.print("Ingrese la opción deseada: ");
 
             int opcion = scanner.nextInt();
@@ -91,6 +98,58 @@ public class Main {
                     MainTapa.updateTapa(nuevaTapa2);
                     break;
                 case 6:
+                    MainBar.printBarInfos();
+                    break;
+                case 7:
+                    System.out.print("Ingrese el ID del bar: ");
+                    String idBar = scanner.nextLine();
+                    MainBar.printBarInfo(idBar);
+                    break;
+                case 8:
+                    System.out.print("Ingrese el ID del bar a eliminar: ");
+                    String idEliminarBar = scanner.nextLine();
+                    MainBar.deleteBarInfo(idEliminarBar);
+                    break;
+                case 9:
+                    System.out.println("Ingrese los nuevos datos del bar:");
+                    System.out.print("ID: ");
+                    String idBarNueva = scanner.nextLine();
+                    System.out.print("Nombre: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Dirección: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Propietario: ");
+                    String owner = scanner.nextLine();
+                    System.out.print("Horario: ");
+                    String hours = scanner.nextLine();
+                    System.out.print("Teléfono: ");
+                    String phone = scanner.nextLine();
+
+
+                    BarInfo nuevoBarInfo = new BarInfo(idBarNueva, name, address, owner, hours, phone);
+                    MainBar.createBarInfo(nuevoBarInfo);
+                    break;
+
+
+
+                case 10:
+                    System.out.println("Ingrese los nuevos datos del bar:");
+                    System.out.print("ID: ");
+                    String idBar2 = scanner.nextLine();
+                    System.out.print("Nombre: ");
+                    String nameBar = scanner.nextLine();
+                    System.out.print("Dirección: ");
+                    String addressBar = scanner.nextLine();
+                    System.out.print("Propietario: ");
+                    String ownerBar = scanner.nextLine();
+                    System.out.print("Horario: ");
+                    String hoursBar = scanner.nextLine();
+                    System.out.print("Teléfono: ");
+                    String phoneBar = scanner.nextLine();
+                    BarInfo nuevoBarInfo2 = new BarInfo(idBar2, nameBar, addressBar, ownerBar, hoursBar, phoneBar);
+                    MainBar.updateBarInfo(nuevoBarInfo2);
+                    break;
+                case 11:
                     continuar = false;
                     System.out.println("Saliendo del programa.");
                     break;
@@ -101,7 +160,7 @@ public class Main {
 
         scanner.close();
     }
-}
+            }
 
 
 
