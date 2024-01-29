@@ -22,26 +22,26 @@ public class MainTapa {
         Tapa tapa = getTapaUseCase.execute(id);
         System.out.println(tapa.toString());
     }
-/*
 
-    public static void deletePet(String petId){
-        DeletePetUseCase deletePetUseCase = new DeletePetUseCase(PetDataRepository.newInstance());
-        deletePetUseCase.execute(petId);
+
+    public static void deleteTapa(String id){
+        DeleteTapaUseCase deleteTapaUseCase = new DeleteTapaUseCase(TapaDataRepository.newInstance());
+        deleteTapaUseCase.execute(id);
     }
 
-    public static void createPet(Pet pet){
-        PetDataRepository petDataRepository = PetDataRepository.newInstance();
-        SavePetUseCase savePetUseCase = new SavePetUseCase(petDataRepository);
-        savePetUseCase.execute(pet);
+    public static void createTapa(Tapa tapa){
+        TapaDataRepository tapaDataRepository = TapaDataRepository.newInstance();
+        SaveTapaUseCase saveTapaUseCase = new SaveTapaUseCase(tapaDataRepository);
+        saveTapaUseCase.execute(tapa);
     }
 
-    public static void updatePet(Pet pet){
-        UpdatePetUseCase updatePetUseCase = new UpdatePetUseCase(PetDataRepository.newInstance());
-        updatePetUseCase.execute(pet);
+    public static void updateTapa(Tapa tapa){
+        UpdateTapaUseCase updatePetUseCase = new UpdateTapaUseCase(TapaDataRepository.newInstance());
+        updatePetUseCase.execute(tapa);
 
         System.out.println("");
     }
-*/
+
 
 
 }

@@ -29,6 +29,9 @@ public class Tapa extends ArrayList<Tapa> {
         this.id = id;
     }
 
+    public Tapa(String id, String nombre, String direccion, String chef, String ingrediente, String alergeno, String nombreBar, String foto, int rating, float precio) {
+    }
+
     public String getName() {
         return name;
     }
