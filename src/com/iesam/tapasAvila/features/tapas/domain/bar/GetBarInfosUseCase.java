@@ -16,7 +16,7 @@ public class GetBarInfosUseCase {
     }
 
     public ArrayList<BarInfo> execute() {
-        return  BarInfoRepository.obtainBarInfo();
+        return  BarInfoRepository.obtainBarInfos();
     }
 }
 

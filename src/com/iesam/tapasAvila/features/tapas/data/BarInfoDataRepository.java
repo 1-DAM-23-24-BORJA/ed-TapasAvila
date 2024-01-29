@@ -59,8 +59,8 @@ public class BarInfoDataRepository implements BarInfoRepository {
     }
 
     private void initData() {
-        localBarInfo.add(new BarInfo("u","","", "","",""));
-        localBarInfo.add(new BarInfo("u","","", "","",""));
+        localBarInfo.add(new BarInfo("u","w","", "","",""));
+        localBarInfo.add(new BarInfo("u","w","", "","",""));
     }
 
     public static BarInfoDataRepository newInstance(){
